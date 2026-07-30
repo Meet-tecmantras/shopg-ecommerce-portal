@@ -1,8 +1,7 @@
-import fetchWithFallback from '@/lib/fetchWithFallback';
 import collectionMock from '@/data/collectionMock';
 
-const CollectionsPage = async () => {
-  const data = await fetchWithFallback('/api/collections', collectionMock);
+const CollectionsPage = () => {
+  const data = collectionMock;
 
   return (
     <section className="space-y-6">

@@ -1,16 +1,12 @@
-import { Suspense } from 'react';
 import HeroSection from '@/components/HeroSection';
 import ProductGrid from '@/components/ProductGrid';
 import SectionHeader from '@/components/SectionHeader';
 import collectionMock from '@/data/collectionMock';
 import homeMock from '@/data/homeMock';
-import fetchWithFallback from '@/lib/fetchWithFallback';
 
-const HomePage = async () => {
-  const [homeData, featuredCollections] = await Promise.all([
-    fetchWithFallback('/api/home', homeMock),
-    fetchWithFallback('/api/collections', collectionMock)
-  ]);
+const HomePage = () => {
+  const homeData = homeMock;
+  const featuredCollections = collectionMock;
 
   return (
     <div className="space-y-12">
